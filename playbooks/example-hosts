@@ -1,0 +1,1 @@
+henry_server ansible_ssh_host=YOUR_IP ansible_ssh_user=YOUR_SSH_USER ansible_ssh_pass=YOUR_SSH_PASS
