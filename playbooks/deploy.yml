@@ -1,0 +1,20 @@
+- name: Deploy henry
+  hosts: henry_server
+  sudo: true
+  vars_files:
+    - vars.yml
+    - secrets.yml
+  handlers:
+    - name: restart hubot
+      service: name=hubot state=restarted
+  tasks:
+    - name: update source
+      git: repo=https://github.com/teamgantt/henry.git
+           dest={{ hubot_directory }}
+      notify:
+        - restart henry
+
+    - name: install packages
+      npm: path={{ hubot_directory }}
+      notify:
+        - restart hubot
