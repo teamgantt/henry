@@ -11,6 +11,7 @@
     - name: update source
       git: repo=https://github.com/teamgantt/henry.git
            dest={{ hubot_directory }}
+           version={{ deploy_ref }}
       notify:
         - restart henry
 
