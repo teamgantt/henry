@@ -1,2 +1,3 @@
 hubot_directory: /etc/henry
 hubot_user: root
+ansible_playbook_directory: /etc/henry/meta-playbooks

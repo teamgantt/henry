@@ -15,6 +15,9 @@
       notify:
         - restart hubot
 
+    - name: update ansible hosts for deploying
+      copy: src=hosts dest={{ hubot_directory }}/meta-playbooks/hosts
+
     - name: install packages
       npm: path={{ hubot_directory }}
       notify:

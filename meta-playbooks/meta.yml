@@ -1,0 +1,7 @@
+- name: Run remote playbook
+  hosts: "{{ server }}"
+  sudo: true
+  tasks:
+    - name: run ansible playbook on remote server
+      command: ansible-playbook deploy.yml -i hosts -e deploy_ref={{ deploy_ref }}
+               chdir=/var/www/vhosts/teamgantt.com/site/content/playbooks
