@@ -11,8 +11,12 @@
     - name: update source
       git: repo=https://github.com/teamgantt/henry.git
            dest={{ hubot_directory }}
+           version={{ deploy_ref }}
       notify:
-        - restart henry
+        - restart hubot
+
+    - name: update ansible hosts for deploying
+      copy: src=hosts dest={{ hubot_directory }}/meta-playbooks/hosts
 
     - name: install packages
       npm: path={{ hubot_directory }}

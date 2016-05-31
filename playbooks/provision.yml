@@ -8,12 +8,17 @@
     - name: reload systemd
       command: systemctl daemon-reload
   tasks:
+    - name: add ansible apt repository
+      apt_repository: repo="ppa:ansible/ansible"
+
     - name: install packages
       apt: name={{ item }} update_cache=true
       with_items:
         - git
         - nodejs-legacy
         - npm
+        - software-properties-common
+        - ansible
 
     - name: clone source
       git: repo=https://github.com/teamgantt/henry.git
