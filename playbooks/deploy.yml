@@ -13,7 +13,7 @@
            dest={{ hubot_directory }}
            version={{ deploy_ref }}
       notify:
-        - restart henry
+        - restart hubot
 
     - name: install packages
       npm: path={{ hubot_directory }}
