@@ -18,6 +18,7 @@ RestartSec=10
 Environment=HUBOT_SLACK_TOKEN={{ hubot_slack_token }}
 Environment=HUBOT_ANSIBLE_PLAYBOOKS_PATH={{ ansible_playbook_directory }}
 Environment=ANSIBLE_HOST_KEY_CHECKING=False
+Environment=USERS_WITH_PRODUCTION_DEPLOY_PRIVILEGES={{ users_with_production_deploy_privileges }}
 
 ExecStart={{ hubot_directory }}/bin/hubot --adapter slack
 
