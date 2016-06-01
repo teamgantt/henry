@@ -7,6 +7,8 @@
   handlers:
     - name: reload systemd
       command: systemctl daemon-reload
+    - name: restart hubot
+      service: name=hubot state=restarted
   tasks:
     - name: add ansible apt repository
       apt_repository: repo="ppa:ansible/ansible"
@@ -29,3 +31,4 @@
       template: src=files/hubot.service.j2 dest=/etc/systemd/system/hubot.service
       notify:
         - reload systemd
+        - restart hubot
