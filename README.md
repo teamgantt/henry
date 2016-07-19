@@ -148,7 +148,7 @@ To provision a machine, run ansible-playbooks with the `provision.yml` file:
 
 To deploy (from master on github), run ansible-playbooks with the `deploy.yml` file:
 
-    % ansible-playbook playbooks/deply.yml -i playbooks/hosts
+    % ansible-playbook playbooks/deploy.yml -i playbooks/hosts -e deploy_ref=master
 
 ## Restart the bot
 
