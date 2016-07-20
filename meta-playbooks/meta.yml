@@ -4,4 +4,4 @@
   tasks:
     - name: run ansible playbook on remote server
       command: ansible-playbook deploy.yml -i hosts -e deploy_ref={{ deploy_ref }}
-               chdir=/var/www/vhosts/{{ ansible_ssh_host }}/site/content/playbooks
+               chdir=/var/www/vhosts/{{ domain }}/site/content/playbooks
